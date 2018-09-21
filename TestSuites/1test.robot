@@ -49,11 +49,6 @@ Home Page Verification
    Footer contains text  Help Centre
 
  #   Brand list has  CHANEL
-  #  Brand list has  TOM FORD
- #   Brand list has  DIOR
-  #  Brand list has  Paco Rabanne
-  #  Brand list has  CHANEL
-
 
 
 Search
