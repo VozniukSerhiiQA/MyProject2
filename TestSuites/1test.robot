@@ -54,6 +54,9 @@ Home Page Verification
   #  Brand list has  Paco Rabanne
   #  Brand list has  CHANEL
 
+
+
+Search
     Go to Landing page
     Search item  Azzaro
     Breadcrumb is displayed  Home  1
