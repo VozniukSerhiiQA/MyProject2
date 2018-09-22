@@ -11,9 +11,9 @@ Search item
     wait until page contains element  ${Search_input}
     element should be visible  ${Search_input}
     click element  ${Search_input}
-    input text  ${Search_input}  ${SEARCH_TEXT}
+    input text  //input[@id='search-input']  ${SEARCH_TEXT}
     click element  ${Search_button}
-    element should be visible  ${Search_input}
+    wait until element is visible  ${Search_input}
     wait until page contains element  //ol[@class="breadcrumbs"]
 
 Breadcrumb is displayed

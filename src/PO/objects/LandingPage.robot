@@ -18,3 +18,7 @@ Verify Home Page Elements
 Brand list has
     [Arguments]  ${LANDING_GRID_BRANDS}
     element should be visible  //div[@class='brand-logo']/a/h4[contains(.,'${LANDING_GRID_BRANDS}')]
+
+Banner in bottom contains
+    [Arguments]  ${LANDING_BANNER_BRANDS}
+    element should be visible  //div[@id="homepageFooter"]//span[contains(.,'${LANDING_BANNER_BRANDS}')]

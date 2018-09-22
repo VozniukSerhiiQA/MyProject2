@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-Resource  vars.robot
+Resource  ../src/variables/vars.robot
 
 *** Keywords ***
 Start Web Test

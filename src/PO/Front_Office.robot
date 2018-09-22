@@ -1,6 +1,8 @@
 *** Settings ***
 Documentation  Talk about what this suite of tests does
 Library  SeleniumLibrary  timeout=10  implicit_wait=1.5  run_on_failure=Capture Page Screenshot
+Library  String
+
 
 Resource  CommonWeb.robot
 Resource  vars.robot
@@ -12,42 +14,36 @@ Resource  objects/TopNav.robot
 
 
 *** Keywords ***
-Go to Landing page
-    Navigate to
-    Verify Home Page Elements
+Search Result Page is displayed
+    wait until element is visible  //section[@class='product-list product_list j-product_list']
+    ${count}=  get element count  //div[@class='pagination-sort']
+    should be equal as integers  ${count}  2
 
-Check Mega Menu
-    Mega menu is displayed
-    Menu contains  Brands
-    Menu contains  Sale
-    Menu contains  Women
-    Menu contains  Men
-    Menu contains  New
-    Menu contains  Gifts
-    Menu contains  Offers
-    Menu contains  Stores & Services
+Filter is displayed
+    [Arguments]  ${FILTER_NAME}
+    wait until element is visible  //section[@class='facets']//h3[contains(text(),'${FILTER_NAME}')]
 
-Check footer
-   Footer is displayed
-   Footer has INFO section
-   Footer has LINKS section
-   Footer contains section  Customer Services
-   Footer contains section  Favourite Brands & Products
-   Footer contains section  Your Perfume Shop
-   Footer contains section  Corporate
-   Footer contains text  Delivery/Click & Collect
-   Footer contains text  Returns & Refunds
-   Footer contains text  FAQs & Help
-   Footer contains text  Contact Us
-   Footer contains text  Store Finder
-   Footer contains text  Help Centre
+Category list contains
+    [Arguments]  ${CUSTOM_SEARCH}
+    wait until element is visible  //div[@id='nav-categories']
+    wait until element is visible  //div[@id='nav-categories']/h3[contains(text(),'${CUSTOM_SEARCH}')]
 
-Check list of brands on Home Page
-    Brand list has  CHANEL
-    Brand list has  TOM FORD
-    Brand list has  DIOR
-    Brand list has  Paco Rabanne
-    Brand list has  CHANEL
+Product matching should be more than one
+    wait until element is visible  //article[@id='searchResults']/p/strong
+    ${get_value}=  get text  //article[@id='searchResults']/p/strong
+    ${get_value2}= 	Encode String To Bytes	${get_value}  UTF-8
+    should be true  ${get_value2}>1
 
+Sort by
+    [Arguments]  ${SORT_BY}  ${SORT_TYPE}
+    wait until element is visible  //div/form/select[@id='sortOptions1']
+    mouse over  //div/form/select[@id='sortOptions1']
+    element should be visible  //div/form/select[@id='sortOptions1']
+    click element  //div/form/select[@id='sortOptions1']/option[contains(text(),'${SORT_BY}')]
+    Search Result Page is displayed
+    ${get_url}=  get location
+    ${cut_url}=  fetch from right  ${get_url}  price-
+    Log  ${cut_url}
+    should be equal as strings  ${cut_url}  ${SORT_TYPE}
 
 
