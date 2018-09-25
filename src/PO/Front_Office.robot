@@ -46,4 +46,6 @@ Sort by
     Log  ${cut_url}
     should be equal as strings  ${cut_url}  ${SORT_TYPE}
 
+Verify Product on grid
+    [Arguments]  ${PRODUCT_NAME}  ${PRODUCT_DESCTRIPTION}
 
