@@ -6,13 +6,13 @@ Metadata  Executed at  ${URL}
 Test Setup  Start Web Test
 Test Teardown  End Web Test
 
-Resource  ../src/PO/CommonWeb.robot
-Resource  ../src/PO/Front_Office.robot
-Resource  ../src/variables/vars.robot
-Resource  ../src/PO/objects/LandingPage.robot
-Resource  ../src/PO/objects/Footer.robot
-Resource  ../src/PO/objects/TopNav.robot
-Resource  ../src/PO/objects/Search.robot
+Resource  ../../src/PO/CommonWeb.robot
+Resource  ../../src/PO/Front_Office.robot
+Resource  ../../src/variables/vars.robot
+Resource  ../../src/PO/objects/LandingPage.robot
+Resource  ../../src/PO/objects/Footer.robot
+Resource  ../../src/PO/objects/TopNav.robot
+Resource  ../../src/PO/objects/Search.robot
 
 
 *** Test Cases ***
