@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<catalog_menu>
+    <product>
+        <name>iPhone10</name>
+        <price>$999.95</price>
+        <description>Now it's not a new phone but with good price</description>
+        <ReleaseDate>2017</ReleaseDate>
+    </product>
+    <product>
+        <name>iPhone8</name>
+        <price>$600</price>
+        <description>iPhone8 - small size</description>
+        <ReleaseDate>2017</ReleaseDate>
+    </product>
+    <product>
+        <name>iPhoneXS</name>
+        <price>$1111.99</price>
+        <description>iPhoneXS - best choice</description>
+        <ReleaseDate>2018</ReleaseDate>
+    </product>
+</catalog_menu>
